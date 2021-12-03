@@ -56,14 +56,18 @@ export class UpdateAPK {
         console.log("getApkVersionSuccess", remote);
         // TODO switch this to versionCode
         let outdated = false;
-        if (remote.versionCode && (remote.versionCode > RNUpdateAPK.versionCode)) {
-            console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + RNUpdateAPK.versionCode + "/" + remote.versionCode);
+        if (remote.devVersion != this.options.devVersion) {
+            console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + this.options.devVersion + "/" + remote.versionCode);
             outdated = true;
         }
-        if (!remote.versionCode && semverLt(RNUpdateAPK.versionName, remote.versionName)) {
-            console.log('RNUpdateAPK::getApkVersionSuccess - APK outdated based on version name, local/remote: ' + RNUpdateAPK.versionName + "/" + remote.versionName);
-            outdated = true
-        }
+        // if (remote.versionCode && (remote.versionCode > RNUpdateAPK.versionCode)) {
+        //     console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + RNUpdateAPK.versionCode + "/" + remote.versionCode);
+        //     outdated = true;
+        // }
+        // if (!remote.versionCode && semverLt(RNUpdateAPK.versionName, remote.versionName)) {
+        //     console.log('RNUpdateAPK::getApkVersionSuccess - APK outdated based on version name, local/remote: ' + RNUpdateAPK.versionName + "/" + remote.versionName);
+        //     outdated = true
+        // }
         if (outdated) {
             if (remote.forceUpdate) {
                 if (this.options.forceUpdateApp) {
