@@ -56,7 +56,7 @@ export class UpdateAPK {
         console.log("getApkVersionSuccess", remote);
         // TODO switch this to versionCode
         let outdated = false;
-        if (remote.devVersion != this.options.devVersion) {
+        if ((remote.devVersion != this.options.devVersion) && !!this.options.devVersion != false) {
             console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + this.options.devVersion + "/" + remote.versionCode);
             outdated = true;
         }
@@ -82,7 +82,7 @@ export class UpdateAPK {
                 }, remote.whatsNew);
             }
         } else if (this.options.notNeedUpdateApp) {
-            this.options.notNeedUpdateApp();
+            this.options.notNeedUpdateApp(remote);
         }
     };
 
@@ -183,7 +183,7 @@ export class UpdateAPK {
         const result = data.results[0];
         const version = result.version;
         const trackViewUrl = result.trackViewUrl;
- 
+
         if (semverLt(RNUpdateAPK.versionName, version)) {
             console.log('RNUpdateAPK::getAppStoreVersionSuccess - outdated based on version name, local/remote: ' + RNUpdateAPK.versionName + "/" + version);
             if (this.options.needUpdateApp) {
