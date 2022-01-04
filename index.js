@@ -55,7 +55,16 @@ export class UpdateAPK {
     getApkVersionSuccess = remote => {
         console.log("getApkVersionSuccess", remote);
         // TODO switch this to versionCode
-        let outdated = !!remote.needUpdate;
+        let outdated = false;
+
+        if (this.options.devVersion) {
+            if ((remote.devVersion != this.options.devVersion) && !!this.options.devVersion != false) {
+                console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + this.options.devVersion + "/" + remote.versionCode);
+                outdated = true;
+            }
+        } else {
+            outdated = !!remote.needUpdate
+        }
 
         // if ((remote.devVersion != this.options.devVersion) && !!this.options.devVersion != false) {
         //     console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + this.options.devVersion + "/" + remote.versionCode);
