@@ -55,11 +55,12 @@ export class UpdateAPK {
     getApkVersionSuccess = remote => {
         console.log("getApkVersionSuccess", remote);
         // TODO switch this to versionCode
-        let outdated = false;
-        if ((remote.devVersion != this.options.devVersion) && !!this.options.devVersion != false) {
-            console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + this.options.devVersion + "/" + remote.versionCode);
-            outdated = true;
-        }
+        let outdated = !!remote.needUpdate;
+
+        // if ((remote.devVersion != this.options.devVersion) && !!this.options.devVersion != false) {
+        //     console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + this.options.devVersion + "/" + remote.versionCode);
+        //     outdated = true;
+        // }
         // if (remote.versionCode && (remote.versionCode > RNUpdateAPK.versionCode)) {
         //     console.log('RNUpdateAPK::getApkVersionSuccess - outdated based on code, local/remote: ' + RNUpdateAPK.versionCode + "/" + remote.versionCode);
         //     outdated = true;
@@ -79,7 +80,7 @@ export class UpdateAPK {
                     if (isUpdate) {
                         this.downloadApk(remote);
                     }
-                }, remote.whatsNew);
+                }, remote);
             }
         } else if (this.options.notNeedUpdateApp) {
             this.options.notNeedUpdateApp(remote);
