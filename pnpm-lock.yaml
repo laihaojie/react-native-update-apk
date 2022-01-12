@@ -1,0 +1,60 @@
+lockfileVersion: 5.3
+
+specifiers:
+  react-native-fs: ^2.18.0
+  semver: ^7.3.5
+
+dependencies:
+  react-native-fs: registry.npmmirror.com/react-native-fs/2.18.0
+  semver: registry.nlark.com/semver/7.3.5
+
+packages:
+
+  registry.nlark.com/lru-cache/6.0.0:
+    resolution: {integrity: sha1-bW/mVw69lqr5D8rR2vo7JWbbOpQ=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/lru-cache/download/lru-cache-6.0.0.tgz}
+    name: lru-cache
+    version: 6.0.0
+    engines: {node: '>=10'}
+    dependencies:
+      yallist: registry.nlark.com/yallist/4.0.0
+    dev: false
+
+  registry.nlark.com/semver/7.3.5:
+    resolution: {integrity: sha1-C2Ich5NI2JmOSw5L6Us/EuYBjvc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/semver/download/semver-7.3.5.tgz?cache=0&sync_timestamp=1631500167672&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fsemver%2Fdownload%2Fsemver-7.3.5.tgz}
+    name: semver
+    version: 7.3.5
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: registry.nlark.com/lru-cache/6.0.0
+    dev: false
+
+  registry.nlark.com/yallist/4.0.0:
+    resolution: {integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/yallist/download/yallist-4.0.0.tgz}
+    name: yallist
+    version: 4.0.0
+    dev: false
+
+  registry.npmmirror.com/base-64/0.1.0:
+    resolution: {integrity: sha1-eAqZyE59YAJgNhURxId2E78k9rs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/base-64/download/base-64-0.1.0.tgz}
+    name: base-64
+    version: 0.1.0
+    dev: false
+
+  registry.npmmirror.com/react-native-fs/2.18.0:
+    resolution: {integrity: sha1-mHuZzJBRjvJmY6jWDmIQRpS0HCE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/react-native-fs/download/react-native-fs-2.18.0.tgz}
+    name: react-native-fs
+    version: 2.18.0
+    peerDependencies:
+      react-native: '*'
+      react-native-windows: '*'
+    dependencies:
+      base-64: registry.npmmirror.com/base-64/0.1.0
+      utf8: registry.npmmirror.com/utf8/3.0.0
+    dev: false
+
+  registry.npmmirror.com/utf8/3.0.0:
+    resolution: {integrity: sha512-E8VjFIQ/TyQgp+TZfS6l8yp/xWppSAHzidGiRrqe4bK4XP9pTRyKFgGJpO3SN7zdX4DeomTrwaseCHovfpFcqQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/utf8/download/utf8-3.0.0.tgz}
+    name: utf8
+    version: 3.0.0
+    dev: false

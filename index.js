@@ -7,7 +7,7 @@ const RNUpdateAPK = NativeModules.RNUpdateAPK;
 
 let jobId = -1;
 
-export class UpdateAPK {
+export default class UpdateAPK {
     constructor(options) {
         this.options = options;
     }
