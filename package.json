@@ -1,6 +1,6 @@
 {
     "name": "jie-rn-update-apk",
-    "version": "5.0.2",
+    "version": "5.0.4",
     "description": "Check for new APK versions and update app from React Native",
     "main": "index.js",
     "repository": {
@@ -28,8 +28,8 @@
     "author": "Mike Hardy (https://github.com/laihaojie)",
     "license": "MIT",
     "dependencies": {
-        "react-native-fs": "^2.18.0",
-        "semver": "^7.3.5"
+        "react-native-fs": "^2.17.0",
+        "semver": "^7.3.7"
     },
     "nativePackage": true,
     "publishConfig": {
